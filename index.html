@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aero Tekhnik Jember - Spesialis Service Elektronik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #004e92;
+            --secondary-blue: #000428;
+            --accent-cyan: #00d2ff;
+            --wa-green: #25d366;
+            --white: #ffffff;
+            --text-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            background: rgba(0, 4, 40, 0.9);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .logo span { color: var(--accent-cyan); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0, 4, 40, 0.5), rgba(0, 78, 146, 0.8)), 
+                        url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=2069') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            color: var(--text-gray);
+        }
+
+        /* --- Buttons --- */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary { background: var(--accent-cyan); color: var(--secondary-blue); }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3); }
+
+        .btn-wa { background: var(--wa-green); color: white; }
+        .btn-wa:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
+
+        /* --- Services --- */
+        .services { padding: 100px 8%; background: var(--white); color: #333; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--secondary-blue); }
+        .section-title div { width: 80px; height: 4px; background: var(--accent-cyan); margin: 10px auto; }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.4s;
+            border: 1px solid #eee;
+        }
+
+        .service-card:hover { 
+            background: var(--primary-blue); 
+            color: white; 
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card i { font-size: 3rem; margin-bottom: 20px; color: var(--primary-blue); }
+        .service-card:hover i { color: var(--accent-cyan); }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--secondary-blue);
+            padding: 60px 8% 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links { margin-bottom: 30px; }
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover { color: var(--accent-cyan); }
+
+        .footer-info { margin-bottom: 20px; font-size: 0.9rem; opacity: 0.8; }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            header { padding: 15px 5%; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">AERO <span>TEKHNIK</span></div>
+        <a href="https://wa.me/6281239063750" class="btn btn-wa" style="padding: 8px 20px; font-size: 0.9rem;">
+            <i class="fab fa-whatsapp"></i> Chat Admin
+        </a>
+    </header>
+
+    <section class="hero">
+        <h1>AERO TEKHNIK</h1>
+        <p>Solusi Profesional Service AC, Kulkas, & Mesin Cuci di Jember dan Sekitarnya. Berpengalaman & Terpercaya sejak Tahun 2020.</p>
+        <div class="btn-group">
+            <a href="#layanan" class="btn btn-primary">Lihat Layanan</a>
+            <a href="https://wa.me/6281239063750" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
+        </div>
+    </section>
+
+    <section class="services" id="layanan">
+        <div class="section-title">
+            <h2>Layanan Kami</h2>
+            <div></div>
+        </div>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-snowflake"></i>
+                <h3>Service AC</h3>
+                <p>Cuci AC rutin, tambah freon, perbaikan modul, hingga bongkar pasang unit AC.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-icicles"></i>
+                <h3>Service Kulkas</h3>
+                <p>Mengatasi kulkas tidak dingin, mati total, ganti karet pintu, atau isi freon kulkas.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-soap"></i>
+                <h3>Mesin Cuci</h3>
+                <p>Perbaikan mesin cuci 1/2 tabung, error digital, kebocoran air, dan penggantian sparepart.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/19x5286C34/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/tekhnik.aero?igsh=YTYyOGJ5aWp2dmRx" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <div class="footer-info">
+            <p><i class="fas fa-map-marker-alt"></i> Area Layanan: Jember & Sekitarnya</p>
+            <p><i class="fas fa-history"></i> Melayani dengan sepenuh hati sejak 2020</p>
+            <p><i class="fas fa-phone"></i> Kontak: +62 812-3906-3750</p>
+        </div>
+        
+        <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 20px;">
+            &copy; 2026 Aero Tekhnik. Built with Quality.
+        </p>
+    </footer>
+
+    <script>
+        // Animasi Header saat Scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = '#000428';
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
+            } else {
+                header.style.background = 'rgba(0, 4, 40, 0.9)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Simple Smooth Reveal untuk Card
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        });
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(50px)";
+            card.style.transition = "0.6s ease-out";
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
